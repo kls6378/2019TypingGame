@@ -22,7 +22,7 @@ void TutorialScene::printTitle() {
 }
 
 void TutorialScene::printContent() {
-	this->content = "\t- 타이핑만을 이용한 게임입니다\n\t- 화면에서 날아오는 글자들을 타이핑하세요!\n\t- 클리어를 하면 할 수록 난이도는 점점 올라갈 것 입니다.\n\n\t- 자판 : 입력\n\t- Enter : 입력값 전송";
+	this->content = "\t- 타이핑만을 이용한 게임입니다\n\t- 화면에서 날아오는 글자들을 기억하여 타이핑하세요!\n\t- 클리어를 하면 할 수록 난이도는 점점 올라갈 것 입니다.\n\n\t- 자판 : 입력\n\t- Enter : 입력값 전송";
 	gotoxy(0, 12);
 	std::cout << this->content << std::endl;
 }

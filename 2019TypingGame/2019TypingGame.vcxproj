@@ -144,16 +144,22 @@
   <ItemGroup>
     <ClCompile Include="ConsoleFunctions.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="languageScene.cpp" />
     <ClCompile Include="MainScene.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="TargetText.cpp" />
     <ClCompile Include="TutorialScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleFunctions.h" />
+    <ClInclude Include="GameScene.h" />
     <ClInclude Include="languageScene.h" />
     <ClInclude Include="MainScene.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Screen.h" />
+    <ClInclude Include="TargetText.h" />
     <ClInclude Include="TutorialScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

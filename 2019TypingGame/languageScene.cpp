@@ -1,5 +1,6 @@
 #include<iostream>
 #include "languageScene.h"
+#include "TargetText.h"
 #include"ConsoleFunctions.h"
 
 
@@ -34,8 +35,8 @@ void languageScene::printContent() {
 }
 
 void languageScene::select() {
-	setCursorType(CursorNormal);
 	int key;
+	this->language = 'k';
 	while (1) {
 		if (_kbhit()) {
 			key = _getch();
@@ -45,18 +46,19 @@ void languageScene::select() {
 				std::cout << "  ";
 				gotoxy(7, 14);
 				std::cout << "->";
-				this->language = "korean";
+				this->language = 'k';
 				break;
 			case 80:
 				gotoxy(7, 14);
 				std::cout << "  ";
 				gotoxy(7, 16);
 				std::cout << "->";
-				this->language = "english";
+				this->language = 'e';
 				break;
 			}
 			if (key == 13) {
 				gotoxy(7, 18);
+				TargetText().setLanguage(this->language);
 				break;
 			}
 		}

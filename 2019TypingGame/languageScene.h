@@ -2,7 +2,7 @@
 class languageScene
 {
 public:
-	std::string language = "korean";
+	char language;
 
 	languageScene();
 	~languageScene();

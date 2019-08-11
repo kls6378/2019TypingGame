@@ -3,6 +3,9 @@
 #include "MainScene.h"
 #include "TutorialScene.h"
 #include "languageScene.h"
+#include "GameScene.h"
+#include "TargetText.h"
+#include "ConsoleFunctions.h"
 
 int main() {
 	Screen s;
@@ -19,9 +22,9 @@ int main() {
 	l.printTitle();
 	l.printContent();
 	l.select();
-	system("cls");
-	std::cout << l.language << std::endl;
 
+	GameScene g;
+	g.GAME();
 
 	return 0;
 }
