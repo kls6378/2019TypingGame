@@ -5,6 +5,7 @@
 #include "languageScene.h"
 #include "GameScene.h"
 #include "TargetText.h"
+#include "gameOver.h"
 #include "ConsoleFunctions.h"
 
 int main() {
@@ -25,6 +26,10 @@ int main() {
 
 	GameScene g;
 	g.GAME();
+
+	gameOver go;
+	go.printTitle();
+	go.printScore();
 
 	return 0;
 }

@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClCompile Include="ConsoleFunctions.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="gameOver.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="languageScene.cpp" />
     <ClCompile Include="MainScene.cpp" />
@@ -154,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleFunctions.h" />
+    <ClInclude Include="gameOver.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="languageScene.h" />
     <ClInclude Include="MainScene.h" />

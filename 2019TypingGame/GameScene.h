@@ -8,6 +8,7 @@ public:
 	Player* player;
 	TargetText* target;
 	int time;
+	int speed;
 	std::string text;
 	std::string answer;
 	GameScene();
@@ -15,10 +16,9 @@ public:
 	void GAME();
 	void printLife();
 	void printScore();
-	void printTime();
+	void countDown();
 	void printTarget();
 	void printInput();
 	void inputText();
-	void timeStart();
 };
 

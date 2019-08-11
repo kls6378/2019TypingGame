@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<fstream>
 #include "GameScene.h"
 #include "ConsoleFunctions.h"
 
@@ -9,6 +10,7 @@ GameScene::GameScene()
 	this->player = new Player();
 	this->target = new TargetText();
 	this->time = 10;
+	this->speed = 100;
 }
 
 
@@ -22,13 +24,26 @@ void GameScene::GAME() {
 	for (int i = 0; this->player->life != 0; i++) {
 		this->printLife();
 		this->printScore();
-		this->printTime();
 		this->printInput();
+		this->countDown();
 		this->printTarget();
 		this->inputText();
 	}
 	if (this->player->life == 0) {
+		int highScore;
+		std::fstream file;
+		file.open("highScore.txt");
+		file >> highScore;
 
+		system("cls");
+		this->player->setCurrentScore(this->player->score);
+		
+		if (this->player->score > highScore) {
+			std::ofstream input("highScore.txt");
+			input << this->player->score;
+			input.close();
+		}
+		file.close();
 	}
 }
 
@@ -42,20 +57,27 @@ void GameScene::printLife() {
 	setTextColor(ColorWhite);
 }
 void GameScene::printScore() {
+	int highScore;
+	std::fstream file;
+	file.open("highScore.txt");
+	file >> highScore;
+
 	gotoxy(55, 2);
 	std::cout << "현재 점수 : " << player->score << std::endl;
-}
-void GameScene::printTime() {
 	gotoxy(55, 4);
-	std::cout << "제한 시간 : " << this->time << std::endl;
+	std::cout << "최고 점수 : " << highScore << std::endl;
+
+	file.close();
 }
-void GameScene::timeStart() {
-	for (int i = 10; i > 0; i--) {
-		gotoxy(67, 4);
-		std::cout << "  ";
+void GameScene::countDown() {
+	for (int i = 3; i > 0; i--) {
+		gotoxy(37, 15);
 		std::cout << i;
 		Sleep(1000);
 	}
+	gotoxy(37, 15);
+	std::cout << " ";
+	
 }
 void GameScene::printTarget() {
 	this->text = this->target->getText();
@@ -64,7 +86,7 @@ void GameScene::printTarget() {
 		std::cout << " ";
 		gotoxy(i, 15);
 		std::cout << this->text;
-		Sleep(100);
+		Sleep(this->speed);
 	}
 	gotoxy(74 - this->text.length(), 15);
 	for (int k = 0; k < this->text.length(); k++) {
@@ -93,6 +115,9 @@ void GameScene::inputText() {
 		setTextColor(ColorWhite);
 		gotoxy(67, 2);
 		std::cout << this->player->score;
+		if (this->player->score % 10 == 0 && this->player->score > 10) {
+			this->speed -= 15;
+		}
 	}
 	else {
 		setTextColor(ColorRed);

@@ -1,4 +1,5 @@
 #include<iostream>
+#include<fstream>
 #include "MainScene.h"
 #include "ConsoleFunctions.h"
 
@@ -23,8 +24,13 @@ void MainScene::printTitle() {
 }
 
 void MainScene::printScore() {
+	int highScore;
+	std::fstream file;
+	file.open("highScore.txt");
+	file >> highScore;
 	gotoxy(30, 15);
-	std::cout << "최고점수 : 20" << std::endl;
+	std::cout << "최고점수 : "<< highScore << std::endl;
+	file.close();
 }
 
 void MainScene::printEnter() {
