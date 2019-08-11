@@ -4,7 +4,7 @@ int Player::currentScore = 0;
 
 Player::Player()
 {
-	this->life = 1;
+	this->life = 3;
 	this->score = 0;
 }
 

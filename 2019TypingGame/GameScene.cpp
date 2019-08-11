@@ -133,6 +133,6 @@ void GameScene::inputText() {
 		}
 	}
 	this->answer = "";
-	Sleep(1000);
+	Sleep(2000);
 	setTextColor(ColorWhite);
 }
