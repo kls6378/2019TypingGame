@@ -7,7 +7,6 @@ class GameScene
 public:
 	Player* player;
 	TargetText* target;
-	int time;
 	int speed;
 	std::string text;
 	std::string answer;

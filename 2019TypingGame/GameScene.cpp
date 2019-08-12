@@ -9,7 +9,6 @@ GameScene::GameScene()
 {
 	this->player = new Player();
 	this->target = new TargetText();
-	this->time = 10;
 	this->speed = 100;
 }
 
