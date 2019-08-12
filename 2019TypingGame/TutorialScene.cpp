@@ -28,8 +28,6 @@ void TutorialScene::printContent() {
 }
 
 void TutorialScene::printEnter() {
-	setCursorType(CursorInvisible);
-	std::string temp;
 	gotoxy(28, 25);
 	std::cout << "Press Enter Key..." << std::endl;
 	while (1) {

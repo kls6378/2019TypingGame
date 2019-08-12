@@ -22,6 +22,7 @@ int main() {
 	t.printEnter();
 	l.printTitle();
 	l.printContent();
+	l.printEnter();
 	l.select();
 
 	GameScene g;

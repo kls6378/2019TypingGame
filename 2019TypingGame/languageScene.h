@@ -9,6 +9,7 @@ public:
 	
 	void printTitle();
 	void printContent();
+	void printEnter();
 	void select();
 };
 

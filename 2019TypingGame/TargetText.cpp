@@ -14,7 +14,7 @@ TargetText::~TargetText()
 }
 
 void TargetText::setLanguage(char l) {
-	this->language = l;
+	language = l;
 }
 
 std::string TargetText::getText() {

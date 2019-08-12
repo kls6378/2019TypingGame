@@ -29,13 +29,12 @@ void MainScene::printScore() {
 	file.open("highScore.txt");
 	file >> highScore;
 	gotoxy(30, 15);
-	std::cout << "최고점수 : "<< highScore << std::endl;
+	std::cout << "최고 점수 : "<< highScore << std::endl;
 	file.close();
 }
 
 void MainScene::printEnter() {
 	setCursorType(CursorInvisible);
-	std::string temp;
 	gotoxy(28, 25);
 	std::cout << "Press Enter Key..." << std::endl;
 	while (1) {

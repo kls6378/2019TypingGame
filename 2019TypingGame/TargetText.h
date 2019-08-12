@@ -112,7 +112,7 @@ public:
 	TargetText();
 	~TargetText();
 
-	void setLanguage(char l);
+	static void setLanguage(char l);
 	std::string getText();
 };
 

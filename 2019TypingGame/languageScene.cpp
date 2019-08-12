@@ -34,6 +34,11 @@ void languageScene::printContent() {
 	std::cout << "¿µ¾î";
 }
 
+void languageScene::printEnter() {
+	gotoxy(28, 25);
+	std::cout << "Press Enter Key..." << std::endl;
+}
+
 void languageScene::select() {
 	int key;
 	this->language = 'k';
