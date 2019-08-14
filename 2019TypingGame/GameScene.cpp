@@ -114,7 +114,7 @@ void GameScene::inputText() {
 		setTextColor(ColorWhite);
 		gotoxy(67, 2);
 		std::cout << this->player->score;
-		if (this->player->score % 10 == 0 && this->player->score > 10) {
+		if (this->player->score % 5 == 0 && this->speed > 10) {
 			this->speed -= 15;
 		}
 	}
