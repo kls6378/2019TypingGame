@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include<time.h>
 #include "GameScene.h"
 #include "ConsoleFunctions.h"
 
@@ -101,13 +102,32 @@ void GameScene::printInput() {
 	std::cout << "──────────────────────────────────────────────────────────────────────────";
 }
 void GameScene::inputText() {
+	int getTimer;
+	time_t timer = time(NULL);
+	gotoxy(55, 6);
+	std::cout << "시간 체크중...";
 	setCursorType(CursorNormal);
 	gotoxy(0, 25);
 	std::cout << "정답 : ";
 	std::getline(std::cin, this->answer);
 	setCursorType(CursorInvisible);
+	getTimer = time(NULL) - timer;
+	gotoxy(55, 6);
+	std::cout << "              ";
+	gotoxy(55, 6);
+	if (getTimer <= 10) {
+		setTextColor(ColorLightGreen);
+		std::cout << "시간 : " << getTimer << "초";
+		setTextColor(ColorWhite);
+	}
+	else if (getTimer > 10) {
+		setTextColor(ColorRed);
+		std::cout << "시간 : " << getTimer << "초";
+		setTextColor(ColorWhite);
+	}
+	
 	gotoxy(30, 15);
-	if (this->answer == this->text) {
+	if (this->answer == this->text && getTimer <= 10) {
 		setTextColor(ColorLightGreen);
 		std::cout << "정답입니다!" << std::endl;
 		this->player->score++;
@@ -118,12 +138,25 @@ void GameScene::inputText() {
 			this->speed -= 15;
 		}
 	}
-	else {
+	else if(this->answer != this->text && getTimer <= 10) {
 		setTextColor(ColorRed);
 		std::cout << "틀렸습니다!" << std::endl;
 		this->player->life--;
 		if (this->player->life > 0) {
 			gotoxy(7+this->player->life, 2);
+			std::cout << " ";
+		}
+		else {
+			gotoxy(5, 2);
+			std::cout << " ";
+		}
+	}
+	else if (getTimer > 10) {
+		setTextColor(ColorRed);
+		std::cout << "시간 초과!" << std::endl;
+		this->player->life--;
+		if (this->player->life > 0) {
+			gotoxy(7 + this->player->life, 2);
 			std::cout << " ";
 		}
 		else {
